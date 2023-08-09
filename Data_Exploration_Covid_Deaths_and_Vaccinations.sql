@@ -3,14 +3,14 @@
 --WHERE POPULATION IS NOT NULL and location = 'Peru'
 --order by 1,2
 
--- Looking at total cases vs total deaths in perú
--- Shows likelihood of dying if you contract covid in Perú
+-- Looking at total cases vs total deaths in perÃº
+-- Shows likelihood of dying if you contract covid in PerÃº
 SELECT Location, date, total_cases,total_deaths,ROUND((CAST(total_deaths AS decimal) /CAST(total_cases AS decimal) )*100,4) as DeathPercentage
 FROM CovidDeaths
 WHERE POPULATION IS NOT NULL and location = 'Peru'
 order by 1,2
 
--- Looking at total cases vs Population in perú
+-- Looking at total cases vs Population in perÃº
 --Show what percentage of the Population got covid
 SELECT Location, date, total_cases,Population,ROUND((CAST(total_cases AS decimal)/Population )*100,4) as PercentageOfPopulationInfected
 FROM CovidDeaths
