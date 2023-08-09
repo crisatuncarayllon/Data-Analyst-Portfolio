@@ -9,19 +9,19 @@ from NashvilleHousing
 -------------------------------------------------------------------------------------------------------
 --STANDARIZE DATE FORMAT
 
---1°: Observamos exactamente lo que queremos modificar y que es lo que queremos obtener
+--1Â°: Observamos exactamente lo que queremos modificar y que es lo que queremos obtener
 Select SaleDate, CONVERT(Date,SaleDate) 
 from NashvilleHousing
 
---2°: Actualizamos los datos de la tabla y modificamos el campo SaleDate, pero no siempre funciona
+--2Â°: Actualizamos los datos de la tabla y modificamos el campo SaleDate, pero no siempre funciona
 --como en mi caso
 Update NashvilleHousing
 SET SaleDate = CONVERT(Date,SaleDate);
 
---3°: Otra manera es modificando la tabla, donde agregamos un campo  
+--3Â°: Otra manera es modificando la tabla, donde agregamos un campo  
 ALTER TABLE NashvilleHousing
 Add SaleDateConverted Date;
---y luegonasignamos la conversión del otro campo,
+--y luegonasignamos la conversiÃ³n del otro campo,
 Update NashvilleHousing
 SET SaleDateConverted = CONVERT(Date,SaleDate);
 --por ultimo borramos la columna que no fue modificada
@@ -197,7 +197,6 @@ FROM CTE_ROW_NUM
 Where rownumber >1
 
 
-*Me quede en el minuto 47.17
 -------------------------------------------------------------------------------------------------------
 --DELETE UNUSED COLUMNS
 
